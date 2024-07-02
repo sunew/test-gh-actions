@@ -45,3 +45,7 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
+
+      - name: The job has succeeded
+        if: ${{ success() }}
+        run: echo SUCCESS!
