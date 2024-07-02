@@ -40,12 +40,15 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-
+          
+      - name: Debug failure
+        run: exit 1
+  
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
 
-      - name: The job has succeeded
+      - name: Success!
         if: ${{ success() }}
         run: echo SUCCESS!
