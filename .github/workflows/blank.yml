@@ -47,8 +47,13 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
+          
       - run: echo "🍏 This job's status is ${{ job.status }}."
 
       - name: Success!
         if: ${{ success() }}
         run: echo SUCCESS!
+
+      - name: Failure!
+        if: ${{ failure() }}
+        run: echo FAILURE!
